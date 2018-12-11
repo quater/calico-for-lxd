@@ -1,6 +1,6 @@
 # calico-for-lxd
 
-With this current/ initial commit, the Calico's `cni-plugin` does currently not work entirely. This repository was created to facilitate the development of a Calico CNI Plugin that works with LXD by the use of the current (i.e. November 2018) CNI and Calico versions.
+This repository showcases how Calico can be used with LXC/LXD. At present, the only caveat is that is only possible to attach one Calico managed network interface per container.
 
 #### Usage
 
