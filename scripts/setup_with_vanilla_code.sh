@@ -14,13 +14,12 @@ make build
 sudo cp $BUILDDIR/cni-plugin/bin/amd64/* /usr/local/bin
 
 export GOPATH=/home/vagrant/go/
+rm -rf $GOPATH/src/github.com/containernetworking/
 mkdir -p $GOPATH/src/github.com/containernetworking/
 cd $GOPATH/src/github.com/containernetworking/
-# git clone https://github.com/containernetworking/cni.git
-git clone https://github.com/quater/cni.git
+git clone https://github.com/containernetworking/cni.git
 cd $GOPATH/src/github.com/containernetworking/cni
-# git checkout cnitool-for-lxc
-git checkout master
+git checkout 42e857f0a2bfe4048a592c1bc634dfdfdb68c42f
 
 go get golang.org/x/tools/cmd/cover
 go get github.com/modocache/gover
