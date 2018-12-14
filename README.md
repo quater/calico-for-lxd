@@ -43,7 +43,7 @@ vagrant@ubuntu-xenial:~$ ping -c 3 $(lxc ls lxd2 | egrep -o "[0-9]+\.[0-9]+\.[0-
 vagrant@ubuntu-xenial:~$ sudo lxc exec lxd1 -- ping -c 3 $(sudo lxc exec lxd2 -- ip addr | grep -A 3 callxd0 | grep -Po 'inet \K[\d.]+')
 vagrant@ubuntu-xenial:~$ sudo lxc exec lxd2 -- ping -c 3 $(sudo lxc exec lxd1 -- ip addr | grep -A 3 callxd0 | grep -Po 'inet \K[\d.]+')
 
-# Create Calico
+# Create Calico network policy to deny ICMP on ingress
 vagrant@ubuntu-xenial:~$ calicoctl create -f -<<EOF
 apiVersion: projectcalico.org/v3
 kind: GlobalNetworkPolicy
